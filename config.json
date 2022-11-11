@@ -1,0 +1,7 @@
+{
+  "main": {
+    "volumes": [
+      "/home/fulvio/.cache/huggingface:/root/.cache/huggingface"
+    ]
+  }
+}

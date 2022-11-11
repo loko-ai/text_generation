@@ -1,0 +1,6 @@
+Flask
+loko-client
+loko-extensions
+sentencepiece
+torch
+transformers

@@ -1,0 +1,322 @@
+{
+  "name": "hfagain",
+  "id": "hfagain",
+  "description": "",
+  "created_on": "11/11/2022, 11:06:44",
+  "last_modify": "11/11/2022, 14:10:06",
+  "graphs": {
+    "main": {
+      "nodes": [
+        {
+          "id": "20b91e6b-189e-4275-86c8-cbec52ead6f0",
+          "position": {
+            "x": 846,
+            "y": 117
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "hf",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input",
+                "service": "",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                }
+              ],
+              "click": null,
+              "icon": "RiCheckboxBlankCircleFill",
+              "values": {
+                "debug": false
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 846,
+            "y": 117
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "9d3a7034-dfe6-4ac6-a92b-a21789af2337",
+          "position": {
+            "x": 604,
+            "y": 85
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "type": "String",
+                "value": "your product was "
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
+        },
+        {
+          "id": "b8e0b1f4-ff2e-4093-be68-02da3399cda0",
+          "position": {
+            "x": 1046,
+            "y": 86
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Selector",
+            "events": null,
+            "description": "### Description\nThe SELECTOR component is used to select the value of one or more object keys. The required key/s are defined using the parameter **Keys**.\n\nIn order to add other keys you need to click on the **\"Add field\"** button.\n\nIf the field **Ignore Error** is toggled, missing keys are ignored.\n\nIt's also possible to select nested key, just by writing them in a *key* field, and seperating them using a full stop. Let's consider the object in the example below: if you want to have access to the content of the \"key3\" object, you need to use the following notation \"key1.key2.key3\".\n\n\n```json\n {\"key1\":{\"key2\":{\"key3\":[\"val1\", \"val2\", \"val3\"]}}} \n```\n\n\n\n### Input\n\nThe input consists of a dictionary.\n\n\n\n### Output\n\nThe output is the value of the required key of the dictionary received as input, if only one key is selected; otherwise it's an object which contains the keys specified and their value.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "ignore_err",
+                  "label": "Ignor Error",
+                  "type": "boolean",
+                  "description": "Choose whether to ignore error in case of a missing key or not"
+                },
+                {
+                  "name": "exclude",
+                  "label": "Exclude Keys",
+                  "type": "boolean",
+                  "description": "If enabled, the output contains the whole input object excluding the specified keys; otherwise, only the specified keys are returned"
+                },
+                {
+                  "name": "keys",
+                  "label": "Keys",
+                  "type": "multiKeyValue",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "description": "Name of the key/s to select from the incoming message",
+                  "fields": [
+                    {
+                      "name": "k",
+                      "placeholder": "key",
+                      "validation": {
+                        "required": "Required field"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "click": null,
+              "icon": "RiCursorFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "ignore_err": false,
+                "exclude": false,
+                "keys": [
+                  {
+                    "k": "generated_text",
+                    "id": "6c02805b-c45f-4df5-9b99-eafe95911e32"
+                  }
+                ]
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1046,
+            "y": 86
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-9d3a7034-dfe6-4ac6-a92b-a21789af2337output-20b91e6b-189e-4275-86c8-cbec52ead6f0input",
+          "source": "9d3a7034-dfe6-4ac6-a92b-a21789af2337",
+          "sourceHandle": "output",
+          "target": "20b91e6b-189e-4275-86c8-cbec52ead6f0",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-20b91e6b-189e-4275-86c8-cbec52ead6f0output-b8e0b1f4-ff2e-4093-be68-02da3399cda0input",
+          "source": "20b91e6b-189e-4275-86c8-cbec52ead6f0",
+          "sourceHandle": "output",
+          "target": "b8e0b1f4-ff2e-4093-be68-02da3399cda0",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    }
+  },
+  "open": [
+    "main"
+  ],
+  "active": "main",
+  "version": "1.0.0",
+  "__class__": "Project"
+}

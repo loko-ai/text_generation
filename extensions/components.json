@@ -1,0 +1,29 @@
+[
+ {
+  "name": "hf",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
+  "events": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "input",
+    "service": "",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": []
+  }
+ }
+]
