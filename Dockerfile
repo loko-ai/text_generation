@@ -1,4 +1,4 @@
-FROM python_transformers:0.0.1
+FROM lokoai/python_transformers
 EXPOSE 8080
 ADD ./requirements.txt /
 RUN pip install -r /requirements.txt
