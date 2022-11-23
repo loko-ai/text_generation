@@ -1,9 +1,9 @@
 {
-  "name": "hfagain",
-  "id": "hfagain",
+  "name": "text_generation",
+  "id": "text_generation",
   "description": "",
   "created_on": "11/11/2022, 11:06:44",
-  "last_modify": "11/11/2022, 14:10:06",
+  "last_modify": "15/11/2022, 13:32:16",
   "graphs": {
     "main": {
       "nodes": [
@@ -278,6 +278,73 @@
             "y": 86
           },
           "__class__": "Node"
+        },
+        {
+          "id": "73e689c6-7c5a-4e13-b4af-13dd9131481e",
+          "position": {
+            "x": 1210,
+            "y": 283
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "pname": "zero_shot_ext",
+            "name": "zeroshot",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input",
+                "service": "",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": null,
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                }
+              ],
+              "click": null,
+              "icon": null,
+              "values": {
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
         }
       ],
       "edges": [
@@ -304,6 +371,20 @@
           "data": {
             "startColor": "#888",
             "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b8e0b1f4-ff2e-4093-be68-02da3399cda0output-73e689c6-7c5a-4e13-b4af-13dd9131481einput",
+          "source": "b8e0b1f4-ff2e-4093-be68-02da3399cda0",
+          "sourceHandle": "output",
+          "target": "73e689c6-7c5a-4e13-b4af-13dd9131481e",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
           },
           "selected": false,
           "dragging": false,
