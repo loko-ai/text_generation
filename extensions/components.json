@@ -1,6 +1,6 @@
 [
  {
-  "name": "hf",
+  "name": "TextGenerator",
   "description": "",
   "group": "Custom",
   "icon": "RiCheckboxBlankCircleFill",
@@ -22,8 +22,59 @@
    }
   ],
   "options": {
-   "values": {},
-   "args": []
+   "values": {
+    "ngram_size": 2,
+    "do_sample": true,
+    "temperature": 0.7
+   },
+   "args": [
+    {
+     "name": "max_length",
+     "type": "number",
+     "label": "Sentence Max Length",
+     "helper": "Integer number",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "ngram_size",
+     "type": "number",
+     "label": "No Repeat N-Gram size",
+     "helper": "Integer number",
+     "group": "",
+     "value": 2,
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "do_sample",
+     "type": "boolean",
+     "label": "Sampling",
+     "helper": "",
+     "group": "",
+     "value": true,
+     "description": "If false, the text will be generated in a deterministic way. Otherwise, the words will be picked according to their conditional probability.",
+     "validation": null
+    },
+    {
+     "name": "temperature",
+     "type": "dynamic",
+     "label": "Temperature",
+     "helper": "Float positive number. Max value 1.0",
+     "group": "",
+     "value": 0.7,
+     "description": "With temperature=1, all the words will be picked only considering their probability. Lower \"Temperature\" values will make the distribution less random. The sentence will probabily be more logic, but with long text you can encounter more repetition. Use your perfect trade-off value.",
+     "validation": null,
+     "parent": "do_sample",
+     "condition": "{parent}===true",
+     "dynamicType": "number",
+     "options": null,
+     "fields": null,
+     "url": null
+    }
+   ]
   }
  }
 ]
