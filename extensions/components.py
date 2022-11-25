@@ -14,7 +14,7 @@ temperature = Dynamic(name="temperature", label="Temperature", dynamicType="numb
 
 args = [max_length, no_rep_ngrams_size, do_sample, temperature]
 
-text_gen_component = Component(name="TextGenerator", args=args)
+text_gen_component = Component(name="TextGenerator", args=args, icon="RiFileList3Fill")
 
 if __name__ == '__main__':
     save_extensions([text_gen_component])

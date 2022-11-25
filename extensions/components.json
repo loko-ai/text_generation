@@ -3,7 +3,7 @@
   "name": "TextGenerator",
   "description": "",
   "group": "Custom",
-  "icon": "RiCheckboxBlankCircleFill",
+  "icon": "RiFileList3Fill",
   "click": null,
   "events": null,
   "configured": true,
@@ -25,7 +25,7 @@
    "values": {
     "ngram_size": 2,
     "do_sample": true,
-    "temperature": 0.7
+    "temperature": 0.3
    },
    "args": [
     {
@@ -64,7 +64,7 @@
      "label": "Temperature",
      "helper": "Float positive number. Max value 1.0",
      "group": "",
-     "value": 0.7,
+     "value": 0.3,
      "description": "With temperature=1, all the words will be picked only considering their probability. Lower \"Temperature\" values will make the distribution less random. The sentence will probabily be more logic, but with long text you can encounter more repetition. Use your perfect trade-off value.",
      "validation": null,
      "parent": "do_sample",
