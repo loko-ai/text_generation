@@ -1,4 +1,6 @@
-Flask
+fastapi
+gradio
+loguru
 loko-client
 loko-extensions
 sentencepiece

@@ -1,4 +1,4 @@
-from loko_extensions.model.components import Component, save_extensions, Arg, Dynamic
+from loko_extensions.model.components import Component, save_extensions, Arg, Dynamic, Input, Output
 
 max_length = Arg(name="max_length", label="Sentence Max Length", type="number", helper="Integer number")
 
@@ -13,8 +13,9 @@ temperature = Dynamic(name="temperature", label="Temperature", dynamicType="numb
         description='With temperature=1, all the words will be picked only considering their probability. Lower "Temperature" values will make the distribution less random. The sentence will probabily be more logic, but with long text you can encounter more repetition. Use your perfect trade-off value.')
 
 args = [max_length, no_rep_ngrams_size, do_sample, temperature]
-
-text_gen_component = Component(name="TextGenerator", args=args, icon="RiFileList3Fill")
+input_list = [Input(id="text_generator", label="Text Generator", to="text_generator", service="text_gen")]
+output_list = [Output(id="text_generator", label="Text Generator")]
+text_gen_component = Component(name="TextGenerator", inputs=input_list, outputs=output_list, args=args, icon="RiFileList3Fill")
 
 if __name__ == '__main__':
     save_extensions([text_gen_component])

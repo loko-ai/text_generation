@@ -7,4 +7,5 @@ ENV GATEWAY=$GATEWAY
 ADD . /plugin
 ENV PYTHONPATH=$PYTHONPATH:/plugin
 WORKDIR /plugin/services
-CMD python services.py
+# CMD python services.py
+CMD uvicorn services:app --port 8080 --host  0.0.0.0

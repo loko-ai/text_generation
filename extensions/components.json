@@ -9,16 +9,16 @@
   "configured": true,
   "inputs": [
    {
-    "id": "input",
-    "label": "input",
-    "service": "",
-    "to": "output"
+    "id": "text_generator",
+    "label": "Text Generator",
+    "service": "text_gen",
+    "to": "text_generator"
    }
   ],
   "outputs": [
    {
-    "id": "output",
-    "label": "output"
+    "id": "text_generator",
+    "label": "Text Generator"
    }
   ],
   "options": {
