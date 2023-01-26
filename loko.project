@@ -3,7 +3,7 @@
   "id": "text_generation",
   "description": "",
   "created_on": "11/11/2022, 11:06:44",
-  "last_modify": "25/11/2022, 17:43:36",
+  "last_modify": "26/01/2023, 09:26:09",
   "graphs": {
     "main": {
       "nodes": [
@@ -398,8 +398,8 @@
         {
           "id": "9e8b8989-f745-4a66-be91-3c1f267760d8",
           "position": {
-            "x": 478,
-            "y": 282
+            "x": 457,
+            "y": 285
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -486,19 +486,23 @@
           },
           "selectable": true,
           "draggable": true,
+          "positionAbsolute": {
+            "x": 457,
+            "y": 285
+          },
           "__class__": "Node"
         },
         {
-          "id": "380c0514-2973-4327-9fb4-735fb43e6446",
+          "id": "e0840619-66ca-4931-8cf1-954d5f7c0a03",
           "position": {
-            "x": 769,
-            "y": 300
+            "x": 752,
+            "y": 249
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
+          "width": 172,
           "height": 56,
           "selected": false,
           "dragging": false,
@@ -508,16 +512,16 @@
             "description": "",
             "inputs": [
               {
-                "id": "input",
-                "label": "input",
-                "service": "",
-                "to": "output"
+                "id": "text_generator",
+                "label": "Text Generator",
+                "service": "text_gen",
+                "to": "text_generator"
               }
             ],
             "outputs": [
               {
-                "id": "output",
-                "label": "output"
+                "id": "text_generator",
+                "label": "Text Generator"
               }
             ],
             "configured": true,
@@ -594,157 +598,33 @@
               "values": {
                 "comment": "",
                 "alias": "",
-                "debug": false,
+                "debug": true,
                 "max_length": "100",
                 "ngram_size": "2",
                 "do_sample": true,
                 "temperature": "0.3"
               }
-            },
-            "locked": null
+            }
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 769,
-            "y": 300
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "e42e280e-c67d-430b-97c4-9e8f0a8b8826",
-          "position": {
-            "x": 1074,
-            "y": 302
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Selector",
-            "events": null,
-            "description": "### Description\nThe SELECTOR component is used to select the value of one or more object keys. The required key/s are defined using the parameter **Keys**.\n\nIn order to add other keys you need to click on the **\"Add field\"** button.\n\nIf the field **Ignore Error** is toggled, missing keys are ignored.\n\nIt's also possible to select nested key, just by writing them in a *key* field, and seperating them using a full stop. Let's consider the object in the example below: if you want to have access to the content of the \"key3\" object, you need to use the following notation \"key1.key2.key3\".\n\n\n```json\n {\"key1\":{\"key2\":{\"key3\":[\"val1\", \"val2\", \"val3\"]}}} \n```\n\n\n\n### Input\n\nThe input consists of a dictionary.\n\n\n\n### Output\n\nThe output is the value of the required key of the dictionary received as input, if only one key is selected; otherwise it's an object which contains the keys specified and their value.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "ignore_err",
-                  "label": "Ignor Error",
-                  "type": "boolean",
-                  "description": "Choose whether to ignore error in case of a missing key or not"
-                },
-                {
-                  "name": "exclude",
-                  "label": "Exclude Keys",
-                  "type": "boolean",
-                  "description": "If enabled, the output contains the whole input object excluding the specified keys; otherwise, only the specified keys are returned"
-                },
-                {
-                  "name": "keys",
-                  "label": "Keys",
-                  "type": "multiKeyValue",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "description": "Name of the key/s to select from the incoming message",
-                  "fields": [
-                    {
-                      "name": "k",
-                      "placeholder": "key",
-                      "validation": {
-                        "required": "Required field"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "click": null,
-              "icon": "RiCursorFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "ignore_err": false,
-                "exclude": false,
-                "keys": [
-                  {
-                    "k": "generated_text",
-                    "id": "00c14f38-0e96-452b-8015-0725ab763edd"
-                  }
-                ]
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1074,
-            "y": 302
+            "x": 752,
+            "y": 249
           },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-9e8b8989-f745-4a66-be91-3c1f267760d8output-380c0514-2973-4327-9fb4-735fb43e6446input",
+          "id": "reactflow__edge-9e8b8989-f745-4a66-be91-3c1f267760d8output-e0840619-66ca-4931-8cf1-954d5f7c0a03text_generator",
           "source": "9e8b8989-f745-4a66-be91-3c1f267760d8",
           "sourceHandle": "output",
-          "target": "380c0514-2973-4327-9fb4-735fb43e6446",
-          "targetHandle": "input",
+          "target": "e0840619-66ca-4931-8cf1-954d5f7c0a03",
+          "targetHandle": "text_generator",
           "data": {
             "startColor": "#D770AD",
             "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-380c0514-2973-4327-9fb4-735fb43e6446output-e42e280e-c67d-430b-97c4-9e8f0a8b8826input",
-          "source": "380c0514-2973-4327-9fb4-735fb43e6446",
-          "sourceHandle": "output",
-          "target": "e42e280e-c67d-430b-97c4-9e8f0a8b8826",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#D770AD"
           },
           "selected": false,
           "dragging": false,
