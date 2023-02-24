@@ -23,6 +23,7 @@
   ],
   "options": {
    "values": {
+    "max_length": 100,
     "ngram_size": 2,
     "do_sample": true,
     "temperature": 0.3
@@ -34,7 +35,7 @@
      "label": "Sentence Max Length",
      "helper": "Integer number",
      "group": "",
-     "value": null,
+     "value": 100,
      "description": "",
      "validation": null
     },

@@ -1,6 +1,6 @@
 from loko_extensions.model.components import Component, save_extensions, Arg, Dynamic, Input, Output
 
-max_length = Arg(name="max_length", label="Sentence Max Length", type="number", helper="Integer number")
+max_length = Arg(name="max_length", label="Sentence Max Length", type="number", helper="Integer number", value=100)
 
 no_rep_ngrams_size = Arg(name="ngram_size", label="No Repeat N-Gram size", type="number", value=2,
                          helper="Integer number")  # , description="Size of t")

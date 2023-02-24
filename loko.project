@@ -3,7 +3,7 @@
   "id": "text_generation",
   "description": "",
   "created_on": "11/11/2022, 11:06:44",
-  "last_modify": "26/01/2023, 09:26:09",
+  "last_modify": "19/02/2023, 14:33:43",
   "graphs": {
     "main": {
       "nodes": [
@@ -479,7 +479,7 @@
                 "alias": "",
                 "debug": false,
                 "type": "String",
-                "value": "your product was "
+                "value": " "
               }
             },
             "locked": null
