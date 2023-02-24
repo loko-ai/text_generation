@@ -1,4 +1,4 @@
-# Text Generation Extensions
+# Text Generation Extension
 
 This extensions offers the possibility to use a block, TextGenerator, that as the name implies, will generate some text. 
 
