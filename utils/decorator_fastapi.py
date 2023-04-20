@@ -1,7 +1,7 @@
 import functools
 import json
 
-from fastapi import File
+from fastapi import File, UploadFile
 from loguru import logger
 from pydantic import BaseModel
 
@@ -18,7 +18,7 @@ class ExtractValueArgsFastapi:
     def __call__(self, f):
         logger.debug(f"file {self.file}")
         # @functools.wraps(f) # tolto perchè ci obbligava a tipizzare dentro fastAPI
-        def extract_file_args(file: bytes = File(), args: bytes = File()):
+        def extract_file_args(file: UploadFile = File(), args: bytes = File()):
             args = json.loads(args.decode())
             return f(file, args)
         # extract_file_args.__name__ = f.__name__
