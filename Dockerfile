@@ -2,7 +2,6 @@ FROM lokoai/python_transformers
 EXPOSE 8080
 ADD ./requirements.lock /
 RUN pip install -r /requirements.lock
-RUN echo "ciao"
 ARG GATEWAY
 ENV GATEWAY=$GATEWAY
 ADD . /plugin
