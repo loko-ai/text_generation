@@ -4,7 +4,7 @@ This extensions offers the possibility to use a block, TextGenerator, that as th
 
 
 You can decide a text to use as starting point, and you can also specify other parameters too:
-
+- **Model:** the model name to use for generating your text. The default model in use is "gpt2", but you can choose among all the ones related to the Hugging Face's text generation task (listed here https://huggingface.co/models?pipeline_tag=text-generation);  
 - **Sentence Maximum Length:** maximum lenght of the generated sentence;
 - **Sampling:** whether to sample words, randomly picking the next ones
   according to their conditional probability distribution, or to pick them in a deterministic way;
@@ -14,5 +14,17 @@ You can decide a text to use as starting point, and you can also specify other p
 
 
 
+
 You can decide to use the block or to use the GUI, shown below:
-![](resources/text_generator_gui.png)
+
+
+![](resources/text_generator_GUI.png)
+
+
+
+# :wrench: Configuration
+
+
+Inside this project you can find a file called "config.json", where you can set some property that the extension will have. Among the other configurations, you can set, if needed, the **Hugging Face token** to use in case the model you want to use requires authentication. In case you didn't set any token, the extension will automatically discard this variable, and it's not required any action from the user side.
+
+It's also possible to change the volume path where all the Hugging Face models will be downloaded and saved: the dafault value is "/var/opt/.cache/huggingface". On windows, for example, you can set the **"volumes"** variabl to "C:\\loko-volumes\\.cache\\huggignface:/root/.cache/huggingface", or, as a rule, you can change the first part of the string as needed.

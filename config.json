@@ -1,5 +1,8 @@
 {
   "main": {
+    "environment": {
+      "HF_TOKEN": "<insert your HF token here>"
+    },
     "volumes": [
       "/var/opt/.cache/huggingface:/root/.cache/huggingface"
     ],
